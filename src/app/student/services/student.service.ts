@@ -13,6 +13,10 @@ export class StudentService {
     return this.http.get<Student[]>(environment.iutApiBaseUrl + "/students");
   }
 
+  getById(id: number): Observable<Student> {
+    return this.http.get<Student>(environment.iutApiBaseUrl + "/students/" + id);
+  }
+
   delete(id: number): Observable<string> {
     return this.http.delete<string>(environment.iutApiBaseUrl + "/students/" + id);
   }
